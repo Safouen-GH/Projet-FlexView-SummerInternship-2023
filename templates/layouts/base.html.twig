@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="{{app.request.locale}}">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}FLEXVIEW{% endblock %}</title>
+    
+    {% block stylesheets %}
+   {{encore_entry_link_tags('app')}}
+
+          
+    {% endblock %}
+
+    {% block javascripts %}
+     {{encore_entry_script_tags('app')}}
+    {% endblock %}
+</head>
+<body>  
+ {% include 'layouts/partials/_flash_messages.html.twig' %}
+ {% include 'layouts/partials/_nav.html.twig' %}
+ 
+  <main role="main" >
+    <div class="container"> <!-- Add the 'container' class here --> 
+        {% block body %} {% endblock %}
+    </div>
+     
+  </main>
+   
+    {% include 'layouts/partials/_footer.html.twig' %}
+</body>
+</html>

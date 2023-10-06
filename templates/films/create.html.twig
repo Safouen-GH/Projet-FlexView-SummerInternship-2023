@@ -1,0 +1,17 @@
+{% extends 'layouts/base.html.twig' %}
+
+{% block title %}Add a New Film{% endblock %}
+
+{% block body %}
+  <div class="row"> 
+    <div class="col-md-4 mx-auto "> 
+    <h1>Add a New Film</h1> 
+      {{include('films/_form.html.twig' , {submitButtonText:'Create Film '})}} 
+     </div>
+     </div>
+     
+ 
+      
+   
+
+{% endblock %}
