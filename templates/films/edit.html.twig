@@ -1,0 +1,20 @@
+{% extends 'layouts/base.html.twig' %}
+
+{% block title %}
+    Update Film {{ film.id }}
+{% endblock %}
+
+{% block body %}
+  <div class="row"> 
+    <div class="col-md-4 mx-auto "> 
+  <h1>Update Film  {{film.title}} </h1>
+        {{ include('films/_form.html.twig', {submitButtonText: 'Update Film'}) }}
+     </div>
+     </div>
+
+       
+         
+       
+     
+  
+{% endblock %}

@@ -1,0 +1,82 @@
+{% extends 'layouts/base.html.twig' %}
+
+{% block title %}
+    Dive In The Realm of Films
+{% endblock %}
+
+{% block body %}
+<style>
+    .zoom-container {
+        overflow: hidden;
+    }
+
+    .zoom-effect {
+        transition: transform 0.2s ease;
+    }
+
+    .zoom-effect:hover {
+        transform: scale(1.1);
+    }
+
+    /* Placeholder image styles */
+    .placeholder-image {
+        max-width: 750px; /* Adjust the image size here */
+        animation: blinkImage 2s infinite;
+        margin-right: 5px;
+    }
+
+    @keyframes blinkImage {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.5; }
+    }
+</style>
+
+<div class="container">
+<div class="d-flex justify-content-center align-items-center">
+    <div class="w-50">
+        <h1 class="mt-5">Welcome to our website</h1>
+        <p class="text-muted">Feel free to discover all available films down below &#x1F497;&#x1F497;.</p>
+    </div>
+    <div class="w-30 "> <!-- Reduced the right margin to 2 units -->
+        <img src="{{ asset('images/flexview.png') }}" alt="Placeholder" class="placeholder-image">
+    </div>
+</div>
+
+
+
+    {% if films|length > 0 %}
+        <h1 class="text-center text-muted my-5">{{ pluralize( films|length, 'Film Within Reach -_-', 'Films Within Reach !!') }}</h1>
+
+        {% for filmBatch in films|batch(3) %}
+            <div class="row">
+                {% for film in filmBatch %}
+                    <div class="col-md-4 d-flex align-items-stretch">
+                        <div class="bg-white rounded shadow p-3 mb-4 w-100 zoom-container">
+                            <a href="{{ path('app_film_details', {'id': film.id}) }}">
+                                {% if film.imageName %}
+                                    <img src="{{ asset('uploads/films/' ~ film.imageName) }}" alt="{{ film.title }}" class="img-fluid rounded w-100 zoom-effect" style="object-fit: cover; height: 200px;">
+                                {% else %}
+                                    <img src="{{ asset('images/default-film-image.jpg') }}" alt="Default Image" class="img-fluid rounded" style="object-fit: cover; height: 200px;">
+                                {% endif %}
+                            </a>
+                            <div class="mt-4 pl-4 text-muted"> {# Add margin-top to create space between image and other details #}
+                                <strong>Title:</strong> {{ film.title }}
+                                <br>
+                                <strong>Description:</strong> {{ film.description }}
+                                <br>
+                                <strong>Classification:</strong> {{ film.classification }}
+                                <br>
+                                <strong>Price:</strong> {{ film.prix }}
+                                <br>
+                                <a href="{{ path('app_film_details', {'id': film.id}) }}" class="btn btn-primary">View More</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    {% else %}
+        <p class="h1 text-center">No Films Yet. <a href="{{ path('app_create') }}">Be The First</a></p> 
+    {% endif %}
+</div>
+{% endblock %}
