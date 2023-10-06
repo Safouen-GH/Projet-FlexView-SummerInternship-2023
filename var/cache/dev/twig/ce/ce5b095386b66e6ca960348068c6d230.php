@@ -1,0 +1,143 @@
+<?php
+
+use Twig\Environment;
+use Twig\Error\LoaderError;
+use Twig\Error\RuntimeError;
+use Twig\Extension\SandboxExtension;
+use Twig\Markup;
+use Twig\Sandbox\SecurityError;
+use Twig\Sandbox\SecurityNotAllowedTagError;
+use Twig\Sandbox\SecurityNotAllowedFilterError;
+use Twig\Sandbox\SecurityNotAllowedFunctionError;
+use Twig\Source;
+use Twig\Template;
+
+/* layouts/partials/_nav.html.twig */
+class __TwigTemplate_cdec313c661260541401d46cddd4178d extends Template
+{
+    private $source;
+    private $macros = [];
+
+    public function __construct(Environment $env)
+    {
+        parent::__construct($env);
+
+        $this->source = $this->getSourceContext();
+
+        $this->parent = false;
+
+        $this->blocks = [
+        ];
+    }
+
+    protected function doDisplay(array $context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "layouts/partials/_nav.html.twig"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "layouts/partials/_nav.html.twig"));
+
+        // line 2
+        echo "
+<nav class=\"navbar navbar-expand-sm navbar-light bg-light mb-4\" aria-label=\"Third navbar example\">
+    <div class=\"container\">
+        <a class=\"navbar-brand\" href=\"";
+        // line 5
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
+        echo "\">FLEXVIEW</a>
+        <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarsExample03\" aria-controls=\"navbarsExample03\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
+            <span class=\"navbar-toggler-icon\"></span>
+        </button>
+
+        <div class=\"collapse navbar-collapse\" id=\"navbarsExample03\">
+            <ul class=\"navbar-nav ms-auto\">
+                ";
+        // line 12
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 12, $this->source); })()), "user", [], "any", false, false, false, 12)) {
+            // line 13
+            echo "                <li class=\"nav-item\">
+                    <a class=\"nav-link\" href=\"";
+            // line 14
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_create");
+            echo "\">New Film</a>
+                </li>
+                <li class=\"nav-item\">
+                    <a class=\"nav-link\" href=\"";
+            // line 17
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout_confirm");
+            echo "\">Logout</a>
+                </li>
+                ";
+        } else {
+            // line 20
+            echo "                <li class=\"nav-item\">
+                    <a class=\"nav-link\" href=\"";
+            // line 21
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
+            echo "\">Login</a>
+                </li>
+                ";
+        }
+        // line 24
+        echo "            </ul>
+        </div>
+    </div>
+</nav>
+";
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+    }
+
+    public function getTemplateName()
+    {
+        return "layouts/partials/_nav.html.twig";
+    }
+
+    public function isTraitable()
+    {
+        return false;
+    }
+
+    public function getDebugInfo()
+    {
+        return array (  84 => 24,  78 => 21,  75 => 20,  69 => 17,  63 => 14,  60 => 13,  58 => 12,  48 => 5,  43 => 2,);
+    }
+
+    public function getSourceContext()
+    {
+        return new Source("{# templates/layouts/navbar.html.twig #}
+
+<nav class=\"navbar navbar-expand-sm navbar-light bg-light mb-4\" aria-label=\"Third navbar example\">
+    <div class=\"container\">
+        <a class=\"navbar-brand\" href=\"{{ path('app_home') }}\">FLEXVIEW</a>
+        <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarsExample03\" aria-controls=\"navbarsExample03\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
+            <span class=\"navbar-toggler-icon\"></span>
+        </button>
+
+        <div class=\"collapse navbar-collapse\" id=\"navbarsExample03\">
+            <ul class=\"navbar-nav ms-auto\">
+                {% if app.user %}
+                <li class=\"nav-item\">
+                    <a class=\"nav-link\" href=\"{{ path('app_create') }}\">New Film</a>
+                </li>
+                <li class=\"nav-item\">
+                    <a class=\"nav-link\" href=\"{{ path('app_logout_confirm') }}\">Logout</a>
+                </li>
+                {% else %}
+                <li class=\"nav-item\">
+                    <a class=\"nav-link\" href=\"{{ path('app_login') }}\">Login</a>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>
+", "layouts/partials/_nav.html.twig", "C:\\Users\\ghaze\\OneDrive\\Bureau\\cinema\\templates\\layouts\\partials\\_nav.html.twig");
+    }
+}
